@@ -4,17 +4,18 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
 <style>
-.resizeimage img { width: 100%; }
 
-.parent {/*親div*/
+.resizeimage img { width: 100%; }
+.resizeimage_a img { width: 100%; }
+
+.resizeimage{/*親div*/
   position: relative;/*相対配置*/
   }
 
-.child {
+.resizeimage_a  {
   position: absolute;/*絶対配置*/
-  color: white;/*文字は白に*/
-  top: -20px;
-  left: 0;
+  bottom: 0.5%;
+  left: 50vw;
   }
 </style>
 
@@ -24,8 +25,10 @@
 <body>
 
 <div class="resizeimage">
-<img class="parent" src="./img/KLK_01.png">
-<img class="child" id="btn" src="./img/next.png">
+　<img src="./img/KLK_01.png">
+　<div class="resizeimage_a">
+　　<img id="btn" src="./img/next.png">
+　</div>
 </div>
 
 <script>

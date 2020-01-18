@@ -5,35 +5,38 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
 <style>
 .resizeimage img { width: 100%; }
+.resizeimage_a img { width: 60%; }
 
-.parent {/*親div*/
+.resizeimage{/*親div*/
   position: relative;/*相対配置*/
   }
 
-.child {
+.resizeimage_a  {
   position: absolute;/*絶対配置*/
-  color: white;/*文字は白に*/
-  top: -20px;
-  left: 0;
+  bottom: 3%;
+  left: -10vw;
   }
 </style>
 
- <title>kikko2</title>
-</head>
+ <title>kikko_bunsyo</title>
 
+</head>
 <body>
 
 <div class="resizeimage">
-<img class="parent" src="./img/KLK_02.png">
-<img class="child" id="return" src="./img/return.png">
+　<img src="./img/KLK_02.png">
+　<div class="resizeimage_a">
+　　<img id="return" src="./img/return.png">
+　</div>
 </div>
+
+
+  
 <script>
 document.getElementById("return").onclick = function()
 {
 location.href='./index.html'
 };
-
-
 </script>
 
 </body>

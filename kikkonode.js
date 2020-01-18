@@ -176,7 +176,7 @@ var server=http.createServer(function(req, res) {
 
 
 
-     //html_page2.html
+     //index3.html
       if("/index3.html" == url)
       {
           fs.readFile("./index3.html", "UTF-8", function (err, data)
