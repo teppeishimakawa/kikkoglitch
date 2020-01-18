@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+<style>
+.resizeimage img { width: 100%; }
+
+.parent {/*親div*/
+  position: relative;/*相対配置*/
+  }
+
+.child {
+  position: absolute;/*絶対配置*/
+  color: white;/*文字は白に*/
+  top: -20px;
+  left: 0;
+  }
+
+html, body {
+ height:100%; /*iframeを全面表示するために絶対必要！！*/
+   padding: 0px;
+  margin: 0px;
+ }
+
+
+#ifm1 {
+  border:none;
+  width:100%;
+  height:100%;
+}
+
+</style>
+
+ <title>kikko2</title>
+</head>
+
+<body>
+
+
+<iframe src="./index_page2_bunsyo.html" id="ifm1" name="one" frameborder="0" width="100%" height="100%">
+
+</iframe>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+<script type="text/javascript">
+
+var flgg1=0;
+
+var socket = io.connect();
+setInterval(function()
+{
+socket.emit("client_to_server", "poling");
+socket.on("server_to_client", function(data)
+  {
+    console.log("rxdata:" + data)
+    console.log(status);
+  //data:トリガ信号,flgg:再生ステータス1がstp
+    if(data == "1" && flgg1 ==0)
+    {
+
+    location.href="./index3.html"
+    flgg1=1;
+    //location.reload();
+    }
+  });
+
+},10000);
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
