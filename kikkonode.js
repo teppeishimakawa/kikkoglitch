@@ -38,6 +38,24 @@ var server=http.createServer(function(req, res) {
       return;
   }*/
 
+  
+        //html
+      if("/index_top.html" == url)
+      {
+          fs.readFile("./index_top.html", "UTF-8", function (err, data)
+         {
+      res.writeHead(200, {"Content-Type": "text/html"});
+      res.write(data);
+      res.end();
+         });
+      }else if("/img/KLK_top.png" == url)
+      { 
+          fs.readFile("./img/KLK_top.png", function (err, data)
+         {
+          res.writeHead(200, {"Content-Type": "image/png"});
+          res.end(data);
+         }); 
+      }
 
 
       //html
@@ -202,10 +220,10 @@ var server=http.createServer(function(req, res) {
 
 
 
-     //index3.html
-      if("/index3.html" == url)
+     //index3_page1.html
+      if("/index3_page1.html" == url)
       {
-          fs.readFile("./index3.html", "UTF-8", function (err, data)
+          fs.readFile("./index3_page1.html", "UTF-8", function (err, data)
          {
       res.writeHead(200, {"Content-Type": "text/html"});
       res.write(data);
@@ -252,6 +270,33 @@ var server=http.createServer(function(req, res) {
           res.end(data);
          }); 
       }
+  
+  
+  
+     //index3.html
+      if("/index3.html" == url)
+      {
+          fs.readFile("./index3.html", "UTF-8", function (err, data)
+         {
+      res.writeHead(200, {"Content-Type": "text/html"});
+      res.write(data);
+      res.end();
+         });
+      }
+  
+  
+       //index3_page2.html
+      if("/index3_page2.html" == url)
+      {
+          fs.readFile("./index3_page2.html", "UTF-8", function (err, data)
+         {
+      res.writeHead(200, {"Content-Type": "text/html"});
+      res.write(data);
+      res.end();
+         });
+      }
+  
+  
 /*
       else if("/img/next.png" == url)
       { 

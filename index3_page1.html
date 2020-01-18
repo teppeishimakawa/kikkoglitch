@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+<style>
+
+.resizeimage img { width: 100%; }
+.resizeimage_a img { width: 65%; }
+.resizeimage_b img { width: 65%; }
+.resizeimage_c img { width: 100%; }
+.resizeimage_d img { width: 50%; }
+.resizeimage_e img { width: 100%; }
+
+.resizeimage{/*親div*/
+  position: relative;/*相対配置*/
+  }
+
+.resizeimage_a  {
+  position: absolute;/*絶対配置*/
+  top: 39%;
+  left: -20vw;
+  }
+  
+.resizeimage_b  {
+  position: absolute;/*絶対配置*/
+  top: 73%;
+  left: -20vw;
+  }
+  
+.resizeimage_c  {
+  position: absolute;/*絶対配置*/
+  bottom: 1%;
+  left: 50vw;
+  }
+  
+.resizeimage_d  {
+  position: absolute;/*絶対配置*/
+  bottom: 1%;
+  left: 0vw;
+  }
+  
+.resizeimage_e  {
+  position: absolute;/*絶対配置*/
+  top: -1.5%;
+  left: 0vw;
+  }
+
+.num
+{
+  position: absolute;/*絶対配置*/
+  top: 40%;
+  left: 80%;
+  font-family:arial, sans-serif;
+  font-size:20px;
+  font-weight: bold;
+  width: 80px;
+  height: 10vw;
+}
+  
+  
+/*ボタン背景消すために必要！*/
+button {
+    padding:0;
+    margin:0;
+    background:none;
+    border:0;
+    font-size:0;
+    line-height:0;
+    overflow:visible;
+    cursor:pointer;
+}
+
+.bt{
+filter: brightness(1);
+transition: filter  .5s ease 0s;;
+  }
+  
+.bt:active{
+filter: brightness(1.8);
+}
+  
+
+
+  
+  
+  
+  
+  
+  
+
+
+#fall {
+  animation-name: fall;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-play-state:paused;
+  animation-play-state:paused;
+  animation-fill-mode:forwards;
+}
+
+@keyframes fall {
+  from {
+    opacity: 0;
+    transform: translateY(-50vh);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0vh);
+  }
+}
+
+
+#fall2 {
+  animation-name: fall;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-play-state:paused;
+  animation-play-state:paused;
+  animation-fill-mode:forwards;
+}
+
+
+
+
+#mini {
+  animation-name: mini;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-play-state:paused;
+  animation-play-state:paused;
+  animation-fill-mode:forwards;
+}
+
+
+@keyframes mini {
+  from {
+    transform: translate(0px,0px) scale(1,1);
+  }
+  to {
+    transform: translate(-40vw,60vh) scale(0.5,0.5);
+  }
+}
+
+#mini2 {
+  animation-name: mini;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-play-state:paused;
+  animation-play-state:paused;
+  animation-fill-mode:forwards;
+}
+
+
+
+#slide {
+  animation-name: slide;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-play-state:paused;
+  animation-play-state:paused;
+  animation-fill-mode:forwards;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0vh);
+  }
+  to {
+    transform: translateX(25vh);
+  }
+}
+
+
+
+
+.left
+{
+   background-color: #008b8b;   /* 背景色指定 */
+   color: #ffffff;
+   font-family:arial, sans-serif;
+   font-weight: bold;
+   position: absolute;          /* 位置指定 */
+   padding: 20px;               /* 余白指定 */
+   top:  10;                     /* 位置指定 */
+                  /* 位置指定 */
+   left:  0;                    /* 位置指定 */
+   right:  1;                   /* 位置指定 */
+   margin:  auto;               /* 中央寄せ */
+   text-align:center;
+   width:  50px;               /* 幅指定 */
+   height: 15px;                /* 高さ指定 */
+}
+
+
+.pic
+{
+    display:inline-block;
+   color: #ffffff;
+   position: absolute;          /* 位置指定 */
+   padding: 100px;               /* 余白指定 */
+   top:  0;                     /* 位置指定 */
+                  /* 位置指定 */
+   left:  0;                    /* 位置指定 */
+   right:  0;                   /* 位置指定 */
+   margin:  auto;               /* 中央寄せ */
+   width:  200px;               /* 幅指定 */
+   height: 250px;                /* 高さ指定 */
+}
+
+.btn
+{
+      display:inline-block;
+   background-color: #008b8b;   /* 背景色指定 */
+   color: #ffffff;
+   font-family:arial, sans-serif;
+   font-size:20px;
+   font-weight: bold;
+   position: absolute;
+   padding: 0px;
+   top:  95vh;
+
+   left:  0;
+   right:  0;
+   margin:  auto;
+   text-align:center;
+   width:  100px;
+   height: 30px;              /* 高さ指定 */
+}
+
+
+.btnBuy
+{
+      display:inline-block;
+   background-color: #008b8b;   /* 背景色指定 */
+   color: #ffffff;
+   font-family:arial, sans-serif;
+   font-size:20px;
+   font-weight: bold;
+   position: absolute;
+   padding: 0px;
+   top:  60vh;
+
+   left:  0;
+   right:  0;
+   margin:  auto;
+   text-align:center;
+   width:  100px;
+   height: 50px;
+}
+
+
+
+
+.label
+{
+      display:inline-block;
+
+   font-family:arial, sans-serif;
+   font-size:30px;
+   font-weight: bold;
+   position: absolute;
+   padding: 0px;
+   top:  50.5vh;
+   left:  -15vw;
+   right:  0;
+   margin:  auto;
+   text-align:center;
+   width:  100px;
+   height: 40px;
+}
+
+</style>
+
+ <title>kikko</title>
+</head>
+
+<body>
+  
+<form action="https://teppeishimakawa-kikkoglitch.glitch.me" method="post" enctype="multipart/form-data" target="send">
+
+<!--　一番上が最も下のレイヤ。順番間違えるとクリックできなくなるので注意！！-->
+<div class="resizeimage">
+ <img src="./img/KLK_03.png">
+ <div class="resizeimage_e" id="fall">
+  <img src="./img/sina1.png" >
+ </div>
+ 
+ <div class="resizeimage_a">
+  <button type="submit" id="buy1" name="t1_order" value="order!"><img src="./img/buy1.png" alt="order!" class="bt"></button>
+  <!--input type="image" name="btn1" src="./img/buy1.png" alt="table1" value="table1"  id="buy1"/-->
+  <!--label for="numid" class="label">num:</label-->
+    <select id="numid1" class="num" name="t1_item1" value="">
+ <option value="">-</option>
+ <option value="0">0</option>
+ <option value="1">1</option>
+ <option value="2">2</option>
+ <option value="3">3</option>
+ <option value="4">4</option>
+ <option value="5">5</option>
+ <option value="6">6</option>
+ <option value="7">7</option>
+ <option value="8">8</option>
+ <option value="9">9</option>
+ <option value="10">10</option>
+ </select>
+ </div>
+  
+ <div class="resizeimage_d">
+  <img id="return" src="./img/return.png" class="bt">
+ </div>
+   <div class="resizeimage_c">
+  <img id="next" src="./img/next.png" class="bt">
+ </div>
+    <!--input type="number" id="numid1" class="num" name="num1"  min="0" max="10" value=""-->
+ <div class="resizeimage_b"> 
+   <button type="submit" id="buy2" name="t1_order"  value="order!"><img src="./img/buy2.png" alt="order!" class="bt"></button>
+  <!--input type="image" name="btn1" src="./img/buy1.png" alt="table1" value="table1"  id="buy1"/-->
+  <!--label for="numid" class="label">num:</label-->
+    <select id="numid2" class="num" name="t1_item2" value="">
+ <option value="">-</option>
+ <option value="0">0</option>
+ <option value="1">1</option>
+ <option value="2">2</option>
+ <option value="3">3</option>
+ <option value="4">4</option>
+ <option value="5">5</option>
+ <option value="6">6</option>
+ <option value="7">7</option>
+ <option value="8">8</option>
+ <option value="9">9</option>
+ <option value="10">10</option>
+ </select>
+ </div>
+
+</div>
+
+
+<div class="left" style="display:none">table_1</div>
+
+
+
+
+<!--div id="mini2">
+<div id="fall2">
+<img class="pic" id="syoyu2" src="./img/syoyu2.png"-->
+
+<!--ここがテーブルナンバー-->
+<!--button type="submit" id="btn2" name="btnn1" class="btnBuy" value="1">buy!</button-->
+
+
+<!--input type="button" id="btn0" class="btn" onclick="first()" value="start" style="display:none"-->
+
+</form>
+
+<!--form送信後遷移させないためのダミー-->
+<iframe name="send" style="width:0px;height:0px;border:0px;"></iframe>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+<script>
+
+  document.getElementById("return").onclick = function()
+{
+location.href='./index_page2_bunsyo.html'
+    
+};
+document.getElementById("next").onclick = function()
+{
+location.href='./index3_page2.html'
+};
+  
+setTimeout(function()
+  {
+  document.getElementById("fall").style.WebkitAnimationPlayState="running";
+  document.getElementById("fall").style.animationPlayState="running";
+  }
+,3000);
+
+</script>
+
+</body>
+</html>
