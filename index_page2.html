@@ -60,10 +60,11 @@ socket.on("server_to_client", function(data)
   //data:トリガ信号,flgg:再生ステータス1がstp
     if(data == "1" && flgg1 ==0)
     {
-
     location.href="./index3.html"
+    //document.getElementById("ifm1").src="./index3.html"
     flgg1=1;
-    //location.reload();
+    socket.disconnect();
+    socket.close();
     }
   });
 

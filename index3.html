@@ -18,13 +18,13 @@
 
 .resizeimage_a  {
   position: absolute;/*絶対配置*/
-  top: 42%;
-  left: 18vw;
+  top: 39%;
+  left: 0vw;
   }
   
 .resizeimage_b  {
   position: absolute;/*絶対配置*/
-  top: 77%;
+  top: 76%;
   left: 18vw;
   }
   
@@ -46,12 +46,36 @@
   left: 0vw;
   }
 
+.num
+{
+  position: absolute;/*絶対配置*/
+  top: 40%;
+  left: 85%;
+  font-family:arial, sans-serif;
+  font-size:20px;
+  font-weight: bold;
+}
+  
+  
+/*ボタン背景消すために必要！*/
+button {
+    padding:0;
+    margin:0;
+    background:none;
+    border:0;
+    font-size:0;
+    line-height:0;
+    overflow:visible;
+    cursor:pointer;
+}
+  
+
 
 
 
 #fall {
   animation-name: fall;
-  animation-duration: 0.6s;
+  animation-duration: 1.5s;
   animation-timing-function: ease-in-out;
   -webkit-animation-play-state:paused;
   animation-play-state:paused;
@@ -209,24 +233,6 @@
 }
 
 
-.num
-{
-      display:inline-block;
-
-   font-family:arial, sans-serif;
-   font-size:30px;
-   font-weight: bold;
-   position: absolute;
-   padding: 0px;
-   top:  50vh;
-
-   left:  10vw;
-   right:  0;
-   margin:  auto;
-   text-align:center;
-   width:  80px;
-   height: 40px;
-}
 
 
 .label
@@ -253,14 +259,20 @@
 </head>
 
 <body>
+  
+<form action="https://teppeishimakawa-kikkoglitch.glitch.me" method="post" enctype="multipart/form-data" target="send">
+
 <!--　一番上が最も下のレイヤ。順番間違えるとクリックできなくなるので注意！！-->
 <div class="resizeimage">
  <img src="./img/KLK_03.png">
- <div class="resizeimage_e">
+ <div class="resizeimage_e" id="fall">
   <img src="./img/sina1.png">
  </div>
  <div class="resizeimage_a">
-  <img id="buy1" src="./img/buy1.png">
+  <button type="submit" id="buy1" name="btn1" value="table1"><img src="./img/buy1.png" alt="table1"></button>
+  <!--input type="image" name="btn1" src="./img/buy1.png" alt="table1" value="table1"  id="buy1"/-->
+  <!--label for="numid" class="label">num:</label-->
+  <input type="number" id="numid1" class="num" name="num1"  min="0" max="10" value="">
  </div>
  <div class="resizeimage_b"> 
   <img id="buy2" src="./img/buy2.png">
@@ -276,22 +288,18 @@
 
 <div class="left" style="display:none">table_1</div>
 
-<form action="https://teppeishimakawa-kikkoglitch.glitch.me" method="post" enctype="multipart/form-data" target="send">
 
-<div id="fall">
-</div>
 
 
 <!--div id="mini2">
 <div id="fall2">
-<img class="pic" id="syoyu2" src="./img/syoyu2.png">
-<label for="numid2" class="label">num:</label>
-<input type="number" id="numid2" class="num" name="num2"  min="0" max="10" value="" -->
+<img class="pic" id="syoyu2" src="./img/syoyu2.png"-->
+
 <!--ここがテーブルナンバー-->
 <!--button type="submit" id="btn2" name="btnn1" class="btnBuy" value="1">buy!</button-->
 
 
-<input type="button" id="btn0" class="btn" onclick="first()" value="start" style="display:none">
+<!--input type="button" id="btn0" class="btn" onclick="first()" value="start" style="display:none"-->
 
 </form>
 
@@ -310,6 +318,14 @@ document.getElementById("next").onclick = function()
 {
 location.href='./index4.html'
 };
+  
+setTimeout(function()
+  {
+  document.getElementById("fall").style.WebkitAnimationPlayState="running";
+  document.getElementById("fall").style.animationPlayState="running";
+  }
+,3000);
+
 </script>
 
 </body>
