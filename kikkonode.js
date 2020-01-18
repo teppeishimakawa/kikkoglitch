@@ -81,13 +81,11 @@ var server=http.createServer(function(req, res) {
         //res.writeHead(200, {'content-type': 'text/plain'});
         //res.end(util.inspect({fields: fields, files: files}));
         //console.log(fields);
-console.log(fields);
-        //term1 = Object.assign(fields["btn1"]);
-        //term2 = Object.assign(fields["num1"]);
-        //term3 = Object.assign(fields["num2"]);
+        console.log(fields);
+        term1 = Object.assign(fields["t1_order"]);
+        term2 = Object.assign(fields["t1_item1"]);
+        term3 = Object.assign(fields["t1_item2"]);
 
-        console.log(term1);
-        //console.log(term2);
         //console.log(term3);
       });
     }

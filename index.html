@@ -17,6 +17,15 @@
   bottom: 0.5%;
   left: 50vw;
   }
+  
+  .bt{
+filter: brightness(1);
+transition: filter 0.5s;
+  }
+  
+.bt:active{
+filter: brightness(1.5);
+}
 </style>
 
  <title>kikko</title>
@@ -25,9 +34,9 @@
 <body>
 
 <div class="resizeimage">
-　<img src="./img/KLK_01.png">
+　<img src="./img/KLK_01.png" class="bt">
 　<div class="resizeimage_a">
-　　<img id="btn" src="./img/next.png">
+　　<img id="btn" src="./img/next.png" class="bt">
 　</div>
 </div>
 

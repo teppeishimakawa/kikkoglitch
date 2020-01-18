@@ -6,8 +6,8 @@
 <style>
 
 .resizeimage img { width: 100%; }
-.resizeimage_a img { width: 80%; }
-.resizeimage_b img { width: 80%; }
+.resizeimage_a img { width: 65%; }
+.resizeimage_b img { width: 65%; }
 .resizeimage_c img { width: 100%; }
 .resizeimage_d img { width: 50%; }
 .resizeimage_e img { width: 100%; }
@@ -19,13 +19,13 @@
 .resizeimage_a  {
   position: absolute;/*絶対配置*/
   top: 39%;
-  left: 0vw;
+  left: -20vw;
   }
   
 .resizeimage_b  {
   position: absolute;/*絶対配置*/
-  top: 76%;
-  left: 18vw;
+  top: 73%;
+  left: -20vw;
   }
   
 .resizeimage_c  {
@@ -50,10 +50,12 @@
 {
   position: absolute;/*絶対配置*/
   top: 40%;
-  left: 85%;
+  left: 80%;
   font-family:arial, sans-serif;
   font-size:20px;
   font-weight: bold;
+  width: 80px;
+  height: 10vw;
 }
   
   
@@ -68,9 +70,25 @@ button {
     overflow:visible;
     cursor:pointer;
 }
+
+.bt{
+filter: brightness(1);
+transition: filter  .5s ease 0s;;
+  }
+  
+.bt:active{
+filter: brightness(1.8);
+}
   
 
 
+
+  
+  
+  
+  
+  
+  
 
 
 #fall {
@@ -266,23 +284,56 @@ button {
 <div class="resizeimage">
  <img src="./img/KLK_03.png">
  <div class="resizeimage_e" id="fall">
-  <img src="./img/sina1.png">
+  <img src="./img/sina1.png" >
  </div>
+ 
  <div class="resizeimage_a">
-  <button type="submit" id="buy1" name="btn1" value="table1"><img src="./img/buy1.png" alt="table1"></button>
+  <button type="submit" id="buy1" name="t1_order" value="order!"><img src="./img/buy1.png" alt="order!" class="bt"></button>
   <!--input type="image" name="btn1" src="./img/buy1.png" alt="table1" value="table1"  id="buy1"/-->
   <!--label for="numid" class="label">num:</label-->
-  <input type="number" id="numid1" class="num" name="num1"  min="0" max="10" value="">
+    <select id="numid1" class="num" name="t1_item1" value="">
+ <option value="">-</option>
+ <option value="0">0</option>
+ <option value="1">1</option>
+ <option value="2">2</option>
+ <option value="3">3</option>
+ <option value="4">4</option>
+ <option value="5">5</option>
+ <option value="6">6</option>
+ <option value="7">7</option>
+ <option value="8">8</option>
+ <option value="9">9</option>
+ <option value="10">10</option>
+ </select>
  </div>
- <div class="resizeimage_b"> 
-  <img id="buy2" src="./img/buy2.png">
- </div>
+  
  <div class="resizeimage_d">
-  <img id="return" src="./img/return.png">
+  <img id="return" src="./img/return.png" class="bt">
  </div>
    <div class="resizeimage_c">
-  <img id="next" src="./img/next.png">
+  <img id="next" src="./img/next.png" class="bt">
  </div>
+    <!--input type="number" id="numid1" class="num" name="num1"  min="0" max="10" value=""-->
+ <div class="resizeimage_b"> 
+   <button type="submit" id="buy2" name="t1_order"  value="order!"><img src="./img/buy2.png" alt="order!" class="bt"></button>
+  <!--input type="image" name="btn1" src="./img/buy1.png" alt="table1" value="table1"  id="buy1"/-->
+  <!--label for="numid" class="label">num:</label-->
+    <select id="numid2" class="num" name="t1_item2" value="">
+ <option value="">-</option>
+ <option value="0">0</option>
+ <option value="1">1</option>
+ <option value="2">2</option>
+ <option value="3">3</option>
+ <option value="4">4</option>
+ <option value="5">5</option>
+ <option value="6">6</option>
+ <option value="7">7</option>
+ <option value="8">8</option>
+ <option value="9">9</option>
+ <option value="10">10</option>
+ </select>
+ </div>
+
 </div>
 
 
