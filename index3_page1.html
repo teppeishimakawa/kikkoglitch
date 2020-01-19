@@ -277,7 +277,7 @@ filter: brightness(1.8);
 
 <body>
   
-<form action="https://teppeishimakawa-kikkoglitch.glitch.me" method="post" enctype="multipart/form-data" target="send">
+<form id="frmid" name="frm1" action="https://teppeishimakawa-kikkoglitch.glitch.me" method="post" enctype="multipart/form-data" target="send">
 
 <!--　一番上が最も下のレイヤ。順番間違えるとクリックできなくなるので注意！！-->
 <div class="resizeimage">
@@ -378,7 +378,7 @@ setTimeout(function()
   document.getElementById("fall").style.animationPlayState="running";
   }
 ,3000);
-
+console.log(document.getElementById("numid2" ).value);
 </script>
 
 </body>

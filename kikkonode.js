@@ -7,6 +7,7 @@ var term2;
 var term3;
 var term4;
 var term5;
+var term6;
 var flg;
 
 
@@ -123,6 +124,10 @@ var server=http.createServer(function(req, res) {
         {
         term5 = Object.assign(fields["t1_radio"]);
         }
+        if(fields["t1_check"])
+        {
+        term6 = Object.assign(fields["t1_check"]);
+        }
         //console.log(term3);
       });
     }
@@ -194,6 +199,15 @@ var server=http.createServer(function(req, res) {
               term5 +
               "'" +
               "}else{document.getElementById('line5').value=''};" +
+              "if(" +
+              "'" +
+              term6 +
+              "'" +
+              " !== 'undefined'){document.getElementById('line6').value=" +
+              "'" +
+              term6 +
+              "'" +
+              "}else{document.getElementById('line6').value=''};" +
               "</script>"
           )
         );
@@ -347,6 +361,47 @@ var server=http.createServer(function(req, res) {
          }); 
       }
   
+  
+         //index3_page3.html
+      if("/index3_page3.html" == url)
+      {
+          fs.readFile("./index3_page3.html", "UTF-8", function (err, data)
+         {
+      res.writeHead(200, {"Content-Type": "text/html"});
+      res.write(data)
+         //data.replace(
+          //  "<p>合計金額：</p>","<p>合計金額：" + term2 + "</p>"));
+      res.end();
+         });
+      }else if("/img/KLK_07.png" == url)
+      { 
+          fs.readFile("./img/KLK_07.png", function (err, data)
+         {
+          res.writeHead(200, {"Content-Type": "image/png"});
+          res.end(data);
+         }); 
+      }else if("/img/check.png" == url)
+      { 
+          fs.readFile("./img/check.png", function (err, data)
+         {
+          res.writeHead(200, {"Content-Type": "image/png"});
+          res.end(data);
+         }); 
+      }else if("/img/item1.png" == url)
+      { 
+          fs.readFile("./img/item1.png", function (err, data)
+         {
+          res.writeHead(200, {"Content-Type": "image/png"});
+          res.end(data);
+         }); 
+      }else if("/img/item2.png" == url)
+      { 
+          fs.readFile("./img/item2.png", function (err, data)
+         {
+          res.writeHead(200, {"Content-Type": "image/png"});
+          res.end(data);
+         }); 
+      }
   
 /*
       else if("/img/next.png" == url)

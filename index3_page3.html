@@ -16,13 +16,19 @@
   position: relative;/*相対配置*/
   }
 
-/*vote*/
+/*check*/
 .resizeimage_a  {
   position: absolute;/*絶対配置*/
   top: 77%;
   left: 0vw;
   }
   
+/*kingaku*/
+.resizeimage_b  {
+  position: absolute;/*絶対配置*/
+  bottom: 1%;
+  left: 50vw;
+  }
 
 /*next*/
 .resizeimage_c  {
@@ -38,7 +44,7 @@
   left: 0vw;
   }
   
-/*radio*/
+/*item1*/
 .resizeimage_e  {
   position: absolute;/*絶対配置*/
   top: 76%;
@@ -48,7 +54,7 @@
   
   }
 
-  /*radio*/
+  /*item2*/
 .resizeimage_f  {
   position: absolute;/*絶対配置*/
   top: 76%;
@@ -92,10 +98,14 @@ filter: brightness(1.8);
 <!--　一番上が最も下のレイヤ。順番間違えるとクリックできなくなるので注意！！-->
 <div class="resizeimage">
   
- <img src="./img/KLK_06.png">
+ <img src="./img/KLK_07.png">
  
  <div class="resizeimage_a">
-  <button type="submit" id="vote" name="t1_vote" value="done"><img src="./img/vote.png" alt="done" class="bt"></button>
+  <button type="submit" id="check" name="t1_check" value="done"><img src="./img/check.png" alt="done" class="bt"></button>
+ </div>
+  
+ <div class="resizeimage_b">
+   <p>合計金額：</p>
  </div>
   
  <div class="resizeimage_d">
@@ -106,10 +116,10 @@ filter: brightness(1.8);
  </div>
   
  <div class="resizeimage_e">
-  <input type="radio" name="t1_radio" value="chinese" checked>
+  <img id="item1" src="./img/item1.png">
  </div>
  <div class="resizeimage_f">
-  <input type="radio" name="t1_radio" value="japanese">
+  <img id="item2" src="./img/item2.png">
  </div>
 
 
@@ -121,15 +131,15 @@ filter: brightness(1.8);
 <iframe name="send" style="width:0px;height:0px;border:0px;"></iframe>
 
 <script>
-
+  
   document.getElementById("return").onclick = function()
 {
-location.href='./index3_page1.html'
+location.href='./index3_page2.html'
     
 };
 document.getElementById("next").onclick = function()
 {
-location.href='./index3_page3.html'
+location.href='./index.html'
 };
   
 
