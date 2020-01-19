@@ -5,6 +5,8 @@ var fs = require("fs");
 var term1;
 var term2;
 var term3;
+var term4;
+var term5;
 var flg;
 
 
@@ -100,10 +102,27 @@ var server=http.createServer(function(req, res) {
         //res.end(util.inspect({fields: fields, files: files}));
         //console.log(fields);
         console.log(fields);
+        
+        if(fields["t1_order"])
+        {
         term1 = Object.assign(fields["t1_order"]);
+        }
+        if(fields["t1_item1"])
+        {
         term2 = Object.assign(fields["t1_item1"]);
+        }
+        if(fields["t1_item2"])
+        {
         term3 = Object.assign(fields["t1_item2"]);
-
+        }
+        if(fields["t1_vote"])
+        {
+        term4 = Object.assign(fields["t1_vote"]);
+        }
+        if(fields["t1_radio"])
+        {
+        term5 = Object.assign(fields["t1_radio"]);
+        }
         //console.log(term3);
       });
     }
@@ -134,16 +153,16 @@ var server=http.createServer(function(req, res) {
               "'" +
               term1 +
               "'" +
-              " !== undefined){document.getElementById('line1').value=" +
+              " !== 'undefined'){document.getElementById('line1').value=" +
               "'" +
               term1 +
               "'" +
               "}else{document.getElementById('line1').value='noOrder'};" +
               "if(" +
-              "'" +
+              "'" + 
               term2 +
               "'" +
-              " !== undefined){document.getElementById('line2').value=" +
+              " !== 'undefined'){document.getElementById('line2').value=" +
               "'" +
               term2 +
               "'" +
@@ -152,11 +171,29 @@ var server=http.createServer(function(req, res) {
               "'" +
               term3 +
               "'" +
-              " !== undefined){document.getElementById('line3').value=" +
+              " !== 'undefined'){document.getElementById('line3').value=" +
               "'" +
               term3 +
               "'" +
               "}else{document.getElementById('line3').value=''};" +
+              "if(" +
+              "'" +
+              term4 +
+              "'" +
+              " !== 'undefined'){document.getElementById('line4').value=" +
+              "'" +
+              term4 +
+              "'" +
+              "}else{document.getElementById('line4').value='noVote'};" +
+              "if(" +
+              "'" +
+              term5 +
+              "'" +
+              " !== 'undefined'){document.getElementById('line5').value=" +
+              "'" +
+              term5 +
+              "'" +
+              "}else{document.getElementById('line5').value=''};" +
               "</script>"
           )
         );
@@ -294,6 +331,20 @@ var server=http.createServer(function(req, res) {
       res.write(data);
       res.end();
          });
+      }else if("/img/KLK_06.png" == url)
+      { 
+          fs.readFile("./img/KLK_06.png", function (err, data)
+         {
+          res.writeHead(200, {"Content-Type": "image/png"});
+          res.end(data);
+         }); 
+      }else if("/img/vote.png" == url)
+      { 
+          fs.readFile("./img/vote.png", function (err, data)
+         {
+          res.writeHead(200, {"Content-Type": "image/png"});
+          res.end(data);
+         }); 
       }
   
   
