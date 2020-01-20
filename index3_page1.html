@@ -1,3 +1,4 @@
+<!--商品選択ページ-->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -110,19 +111,6 @@ filter: brightness(1.8);
   }
 }
 
-
-#fall2 {
-  animation-name: fall;
-  animation-duration: 0.6s;
-  animation-timing-function: ease-in-out;
-  -webkit-animation-play-state:paused;
-  animation-play-state:paused;
-  animation-fill-mode:forwards;
-}
-
-
-
-
 #mini {
   animation-name: mini;
   animation-duration: 0.6s;
@@ -132,7 +120,6 @@ filter: brightness(1.8);
   animation-fill-mode:forwards;
 }
 
-
 @keyframes mini {
   from {
     transform: translate(0px,0px) scale(1,1);
@@ -141,17 +128,6 @@ filter: brightness(1.8);
     transform: translate(-40vw,60vh) scale(0.5,0.5);
   }
 }
-
-#mini2 {
-  animation-name: mini;
-  animation-duration: 0.6s;
-  animation-timing-function: ease-in-out;
-  -webkit-animation-play-state:paused;
-  animation-play-state:paused;
-  animation-fill-mode:forwards;
-}
-
-
 
 #slide {
   animation-name: slide;
@@ -170,8 +146,6 @@ filter: brightness(1.8);
     transform: translateX(25vh);
   }
 }
-
-
 
 
 .left
@@ -248,9 +222,6 @@ filter: brightness(1.8);
    width:  100px;
    height: 50px;
 }
-
-
-
 
 .label
 {
@@ -361,7 +332,8 @@ filter: brightness(1.8);
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
 <script>
-
+  
+  
   document.getElementById("return").onclick = function()
 {
 location.href='./index_page2_bunsyo.html'
@@ -378,7 +350,12 @@ setTimeout(function()
   document.getElementById("fall").style.animationPlayState="running";
   }
 ,3000);
-console.log(document.getElementById("numid2" ).value);
+  
+document.getElementById("buy1").name="t" + localStorage.getItem("table") + "_order";
+document.getElementById("numid1").name="t" + localStorage.getItem("table") + "_item1";
+document.getElementById("buy2").name="t" + localStorage.getItem("table") + "_order";
+document.getElementById("numid2").name="t" + localStorage.getItem("table") + "_item2";
+  
 </script>
 
 </body>

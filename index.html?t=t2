@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+<style>
+
+.resizeimage img { width: 100%; }
+.resizeimage_a img { width: 100%; }
+
+.resizeimage{/*親div*/
+  position: relative;/*相対配置*/
+  }
+
+.resizeimage_a  {
+  position: absolute;/*絶対配置*/
+  bottom: 0.5%;
+  left: 50vw;
+  }
+  
+  .bt{
+filter: brightness(1);
+transition: filter 0.5s;
+  }
+  
+.bt:active{
+filter: brightness(1.5);
+}
+  
+  
+.css-fade1 {
+    /* アニメーション設定*/
+    animation-name: fade-in1;
+    animation-duration: 2s; /* アニメーション時間*/
+    animation-timing-function: ease-out; /* アニメーションさせるイージング*/
+    animation-delay: 0s; /* アニメーション開始させる時間*/
+    animation-iteration-count: 1; /* 繰り返し回数*/
+    animation-direction: normal; /* 往復処理をするかどうか*/
+    animation-fill-mode: forwards; /* アニメーション後のスタイルをどうするか*/
+  }
+  /* アニメーション*/
+  @keyframes fade-in1 {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }  
+  
+</style>
+
+ <title>kikko</title>
+</head>
+
+<body>
+
+<div class="css-fade1">  
+  
+<div class="resizeimage">
+　<img src="./img/KLK_01.png" class="bt">
+　<div class="resizeimage_a">
+　　<img id="btn" src="./img/next.png" class="bt">
+　</div>
+</div>
+  
+</div>
+
+<script>
+//tableNoをlsに書き込み
+var param=location.search.slice(-1);
+localStorage.setItem("table",param);
+document.getElementById("btn").onclick = function()
+{
+location.href='./index_page2.html'
+};
+</script>
+</body>
+</html>

@@ -6,11 +6,14 @@
 <style>
 
 .resizeimage img { width: 100%; }
-.resizeimage_a img { width: 50%; }
+/*pixel指定しないと横いっぱいに広がってしまう*/
+.resizeimage_a img {width: 100px;
+ /*object-fit: cover; */}
 
-.resizeimage_c img { width: 100%; }
-.resizeimage_d img { width: 50%; }
-.resizeimage_e img { width: 100%; }
+.resizeimage_c img { width: 200px; }
+.resizeimage_d img { width: 200px; }
+.resizeimage_e img { width: 70%; }
+.resizeimage_f img { width: 70%; }
 
 .resizeimage{/*親div*/
   position: relative;/*相対配置*/
@@ -19,15 +22,29 @@
 /*check*/
 .resizeimage_a  {
   position: absolute;/*絶対配置*/
-  top: 77%;
+  top: 84%;
   left: 0vw;
   }
   
 /*kingaku*/
 .resizeimage_b  {
   position: absolute;/*絶対配置*/
-  bottom: 1%;
-  left: 50vw;
+  top: 76%;
+  left: 10%;
+  }
+  
+/*kazu1*/
+#kazu1 {
+  position: absolute;/*絶対配置*/
+  top: 28%;
+  left: 65%;
+  }
+  
+/*kazu2*/
+#kazu2  {
+  position: absolute;/*絶対配置*/
+  top: 58%;
+  left: 65%;
   }
 
 /*next*/
@@ -47,20 +64,16 @@
 /*item1*/
 .resizeimage_e  {
   position: absolute;/*絶対配置*/
-  top: 76%;
-  left: 23vw;
-  -webkit-transform: scale(2);
-  transform: scale(2);
+  top: 25%;
+  left: 0%;
   
   }
 
   /*item2*/
 .resizeimage_f  {
   position: absolute;/*絶対配置*/
-  top: 76%;
-  left: 68vw;
-  -webkit-transform: scale(2);
-  transform: scale(2);
+  top: 55%;
+  left: 0%;
   }
   
   
@@ -85,6 +98,11 @@ transition: filter  .5s ease 0s;;
 filter: brightness(1.8);
 }
   
+p{
+    font-size:20px;
+    color:#fff
+  }
+  
 
 </style>
 
@@ -99,13 +117,12 @@ filter: brightness(1.8);
 <div class="resizeimage">
   
  <img src="./img/KLK_07.png">
- 
- <div class="resizeimage_a">
-  <button type="submit" id="check" name="t1_check" value="done"><img src="./img/check.png" alt="done" class="bt"></button>
- </div>
   
- <div class="resizeimage_b">
-   <p>合計金額：</p>
+ <div class="resizeimage_e">
+  <img id="item1" src="./img/item1.png">
+ </div>
+ <div class="resizeimage_f">
+  <img id="item2" src="./img/item2.png">
  </div>
   
  <div class="resizeimage_d">
@@ -114,14 +131,23 @@ filter: brightness(1.8);
    <div class="resizeimage_c">
   <img id="next" src="./img/next.png" class="bt">
  </div>
-  
- <div class="resizeimage_e">
-  <img id="item1" src="./img/item1.png">
- </div>
- <div class="resizeimage_f">
-  <img id="item2" src="./img/item2.png">
- </div>
 
+  <div class="resizeimage_a">
+  <button type="submit" id="check" name="t1_check" value="done"><img src="./img/check.png" alt="done" class="bt"></button>
+ </div>
+  
+
+   <div class="resizeimage_b">
+   <p id="sum">合計金額：</p>
+   </div>
+   <div class="resizeimage_b" id="kazu1">
+   <p id="syoyu">個数：</p>
+   </div>
+   <div class="resizeimage_b" id="kazu2">
+   <p id="moromi">個数：</p>
+   </div>
+
+  
 
 </div>
 
@@ -132,7 +158,26 @@ filter: brightness(1.8);
 
 <script>
   
-  document.getElementById("return").onclick = function()
+var term2=0;
+var term3=0;
+var term12=0;
+var term13=0;
+
+if(localStorage.getItem("table") == "1")
+ {
+ document.getElementById("sum").innerHTML="合計金額：" + (term2*400+term3*880) + "円";
+ document.getElementById("syoyu").innerHTML="合計金額：" + term2 + "円";
+ document.getElementById("moromi").innerHTML="合計金額：" + term3 + "円";
+ }else if(localStorage.getItem("table") == "2")
+ {
+ document.getElementById("sum").innerHTML="合計金額：" + (term12*400+term13*880) + "円";
+ document.getElementById("syoyu").innerHTML="合計金額：" + term12 + "円";
+ document.getElementById("moromi").innerHTML="合計金額：" + term13 + "円";
+ };
+  
+  
+  
+document.getElementById("return").onclick = function()
 {
 location.href='./index3_page2.html'
     
@@ -142,7 +187,7 @@ document.getElementById("next").onclick = function()
 location.href='./index.html'
 };
   
-
+document.getElementById("check").name="t" + localStorage.getItem("table") + "_check";
 
 </script>
 

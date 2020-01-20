@@ -8,7 +8,14 @@ var term3;
 var term4;
 var term5;
 var term6;
+var term11;
+var term12;
+var term13;
+var term14;
+var term15;
+var term16;
 var flg;
+var item1_num,item2,num;
 
 
 
@@ -62,9 +69,9 @@ var server=http.createServer(function(req, res) {
 
 
       //html
-      if("/index.html" == url)
+      if("/index.html?t=t1" == url)
       {
-          fs.readFile("./index.html", "UTF-8", function (err, data)
+          fs.readFile("./index.html?t=t1", "UTF-8", function (err, data)
          {
       res.writeHead(200, {"Content-Type": "text/html"});
       res.write(data);
@@ -87,6 +94,30 @@ var server=http.createServer(function(req, res) {
       }
 
 
+        //html
+      if("/index.html?t=t2" == url)
+      {
+          fs.readFile("./index.html?t=t2", "UTF-8", function (err, data)
+         {
+      res.writeHead(200, {"Content-Type": "text/html"});
+      res.write(data);
+      res.end();
+         });
+      }/*else if("/img/KLK_01.png" == url)
+      { 
+          fs.readFile("./img/KLK_01.png", function (err, data)
+         {
+          res.writeHead(200, {"Content-Type": "image/png"});
+          res.end(data);
+         }); 
+      }else if("/img/next.png" == url)
+      { 
+          fs.readFile("./img/next.png", function (err, data)
+         {
+          res.writeHead(200, {"Content-Type": "image/png"});
+          res.end(data);
+         }); 
+      } */
 
   
     //clientからのデータ受信
@@ -129,6 +160,32 @@ var server=http.createServer(function(req, res) {
         term6 = Object.assign(fields["t1_check"]);
         }
         //console.log(term3);
+        
+        //table2のオーダー
+        if(fields["t2_order"])
+        {
+        term11 = Object.assign(fields["t2_order"]);
+        }
+        if(fields["t2_item1"])
+        {
+        term12 = Object.assign(fields["t2_item1"]);
+        }
+        if(fields["t2_item2"])
+        {
+        term13 = Object.assign(fields["t2_item2"]);
+        }
+        if(fields["t2_vote"])
+        {
+        term14 = Object.assign(fields["t2_vote"]);
+        }
+        if(fields["t2_radio"])
+        {
+        term15 = Object.assign(fields["t2_radio"]);
+        }
+        if(fields["t2_check"])
+        {
+        term16 = Object.assign(fields["t2_check"]);
+        }
       });
     }
   
@@ -208,6 +265,61 @@ var server=http.createServer(function(req, res) {
               term6 +
               "'" +
               "}else{document.getElementById('line6').value=''};" +
+           
+              "if(" +
+              "'" +
+              term11 +
+              "'" +
+              " !== 'undefined'){document.getElementById('line11').value=" +
+              "'" +
+              term11 +
+              "'" +
+              "}else{document.getElementById('line11').value='noOrder'};" +
+              "if(" +
+              "'" + 
+              term12 +
+              "'" +
+              " !== 'undefined'){document.getElementById('line12').value=" +
+              "'" +
+              term12 +
+              "'" +
+              "}else{document.getElementById('line12').value=''};" +
+              "if(" +
+              "'" +
+              term13 +
+              "'" +
+              " !== 'undefined'){document.getElementById('line13').value=" +
+              "'" +
+              term13 +
+              "'" +
+              "}else{document.getElementById('line13').value=''};" +
+              "if(" +
+              "'" +
+              term14 +
+              "'" +
+              " !== 'undefined'){document.getElementById('line14').value=" +
+              "'" +
+              term14 +
+              "'" +
+              "}else{document.getElementById('line14').value='noVote'};" +
+              "if(" +
+              "'" +
+              term15 +
+              "'" +
+              " !== 'undefined'){document.getElementById('line15').value=" +
+              "'" +
+              term15 +
+              "'" +
+              "}else{document.getElementById('line15').value=''};" +
+              "if(" +
+              "'" +
+              term16 +
+              "'" +
+              " !== 'undefined'){document.getElementById('line16').value=" +
+              "'" +
+              term16 +
+              "'" +
+              "}else{document.getElementById('line16').value=''};" +
               "</script>"
           )
         );
@@ -368,9 +480,14 @@ var server=http.createServer(function(req, res) {
           fs.readFile("./index3_page3.html", "UTF-8", function (err, data)
          {
       res.writeHead(200, {"Content-Type": "text/html"});
-      res.write(data)
-         //data.replace(
-          //  "<p>合計金額：</p>","<p>合計金額：" + term2 + "</p>"));
+      res.write(
+      data.replace(
+      "var term2=0;","var term2=" + parseInt(term2)
+      ).replace("var term3=0;","var term3=" + parseInt(term3)
+      ).replace("var term12=0;","var term12=" + parseInt(term12)
+      ).replace("var term13=0;","var term13=" + parseInt(term13)
+      )
+      )
       res.end();
          });
       }else if("/img/KLK_07.png" == url)

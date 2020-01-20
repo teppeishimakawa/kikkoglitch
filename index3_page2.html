@@ -87,7 +87,7 @@ filter: brightness(1.8);
 
 <body>
   
-<form action="https://teppeishimakawa-kikkoglitch.glitch.me" method="post" enctype="multipart/form-data" target="send">
+<form name="frm3_2" action="https://teppeishimakawa-kikkoglitch.glitch.me" method="post" enctype="multipart/form-data" target="send">
 
 <!--　一番上が最も下のレイヤ。順番間違えるとクリックできなくなるので注意！！-->
 <div class="resizeimage">
@@ -106,10 +106,10 @@ filter: brightness(1.8);
  </div>
   
  <div class="resizeimage_e">
-  <input type="radio" name="t1_radio" value="chinese" checked>
+  <input type="radio" id="a" name="t1_radio" value="chinese" checked>
  </div>
  <div class="resizeimage_f">
-  <input type="radio" name="t1_radio" value="japanese">
+  <input type="radio" id="b" name="t1_radio" value="japanese">
  </div>
 
 
@@ -132,7 +132,18 @@ document.getElementById("next").onclick = function()
 location.href='./index3_page3.html'
 };
   
+  
+document.getElementById("vote").name="t" + localStorage.getItem("table") + "_vote";
 
+//document.getElementsByName("t1_radio")[0].name="t" + localStorage.getItem("table") + "_radio";
+//document.getElementsByName("t1_radio")[1].name="t" + localStorage.getItem("table") + "_radio";
+  
+
+document.getElementById("a").name="t" + localStorage.getItem("table") + "_radio";
+document.getElementById("b").name="t" + localStorage.getItem("table") + "_radio";
+
+  //console.log(document.getElementsByName("t1_radio")[0].name);
+  //console.log(document.getElementsByName("t1_radio")[1].name);
 
 </script>
 
