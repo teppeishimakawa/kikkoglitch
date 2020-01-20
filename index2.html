@@ -46,6 +46,10 @@
     <a href="/index_top.html">index_top</a>
     <button id="sttbtn">start</button>
     <button id="stpbtn">stop</button>
+    <br>
+    <br>
+    <p id="status"></p>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
     <script>
     document.getElementById("sttbtn").onclick=function()
     {
@@ -69,6 +73,28 @@
     request.send(jsonText);
 
     }
+      
+var flgg1=0;
+
+var socket = io.connect();
+setInterval(function()
+{
+socket.emit("client_to_server", "poling");
+socket.on("server_to_client", function(data)
+  {
+    console.log("rxdata:" + data)
+    document.getElementById("status").innerHTML="rxdata:" + data;
+  //data:トリガ信号,flgg:再生ステータス1がstp
+    if(data == "1" && flgg1 ==0)
+    {
+    //document.getElementById("ifm1").src="./index3.html"
+    flgg1=1;
+    socket.disconnect();
+    //socket.close();
+    }
+  });
+},10000);
+
     </script>
     <script></script>
   </body>

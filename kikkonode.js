@@ -17,15 +17,39 @@ var term16;
 var flg;
 var item1_num,item2,num;
 
+const ALLOWED_METHODS = [
+    'GET',
+    'POST',
+    'PUT',
+    'PATCH',
+    'DELETE',
+    'HEAD',
+    'OPTIONS'
+];
+
+
+
+
+
+  // Logic for other than OPTIONS from here - eg. handling POST, etc.
+
+
+
 
 
 var server=http.createServer(function(req, res) {
 
   res.setHeader('Access-Control-Allow-Origin', '*')
   res.setHeader('Access-Control-Request-Method', '*')
-  res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET')
+  res.setHeader('Access-Control-Allow-Methods', ALLOWED_METHODS.join(','));
   res.setHeader('Access-Control-Allow-Headers', '*')
+        if (req.url.indexOf('/cros-with-credentials/') > -1) {
+            res.setHeader('Access-Control-Allow-Credentials', 'true');
+        }
   
+  
+  
+
 
     var url = req.url;
     console.log(url);
@@ -190,7 +214,16 @@ var server=http.createServer(function(req, res) {
     }
   
   
+  //options付いちゃう時はこれ！！
+  const cors = require('cors')({ origin: true });
   
+    if (req.method == "OPTIONS") 
+  {
+      cors(req, res, () => {
+        res.status(200).send()
+      });
+      return
+  }
   
 
 

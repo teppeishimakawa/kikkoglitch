@@ -6,16 +6,17 @@
 <style>
 
 .resizeimage img { width: 100%; }
-.resizeimage_a img { width: 100%; }
+.resizeimage_a img { width: 150px; }
 
 .resizeimage{/*親div*/
   position: relative;/*相対配置*/
   }
 
-.resizeimage_a  {
+/*next*/
+.resizeimage_a {
   position: absolute;/*絶対配置*/
-  bottom: 0.5%;
-  left: 50vw;
+  bottom: 1%;
+  left: 55%;
   }
   
   .bt{
@@ -66,6 +67,7 @@ filter: brightness(1.5);
   
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
 <script>
 //tableNoをlsに書き込み
 var param=location.search.slice(-1);
@@ -74,6 +76,29 @@ document.getElementById("btn").onclick = function()
 {
 location.href='./index_page2.html'
 };
+
+
+var flgg1=0;
+
+var socket = io.connect();
+setInterval(function()
+{
+socket.emit("client_to_server", "poling");
+socket.on("server_to_client", function(data)
+  {
+    console.log("rxdata:" + data)
+  //data:トリガ信号,flgg:再生ステータス1がstp
+    if(data == "1" && flgg1 ==0)
+    {
+    location.href="./index3.html"
+    //document.getElementById("ifm1").src="./index3.html"
+    flgg1=1;
+    socket.disconnect();
+    //socket.close();
+    }
+  });
+
+},10000);
 </script>
 </body>
 </html>

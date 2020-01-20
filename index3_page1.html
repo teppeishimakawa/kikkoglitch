@@ -7,38 +7,39 @@
 <style>
 
 .resizeimage img { width: 100%; }
-.resizeimage_a img { width: 65%; }
-.resizeimage_b img { width: 65%; }
-.resizeimage_c img { width: 100%; }
-.resizeimage_d img { width: 50%; }
+.resizeimage_a img { width: 150px; }
+.resizeimage_b img { width: 150px; }
+.resizeimage_c img { width: 150px; }
+.resizeimage_d img { width: 150px; }
 .resizeimage_e img { width: 100%; }
 
 .resizeimage{/*親div*/
   position: relative;/*相対配置*/
   }
 
+  /*buy*/
 .resizeimage_a  {
   position: absolute;/*絶対配置*/
-  top: 39%;
-  left: -20vw;
+  top: 50%;
+  left: 30%;
   }
-  
+  /*buy*/
 .resizeimage_b  {
   position: absolute;/*絶対配置*/
-  top: 73%;
-  left: -20vw;
+  top: 85%;
+  left: 30%;
   }
   
 .resizeimage_c  {
   position: absolute;/*絶対配置*/
   bottom: 1%;
-  left: 50vw;
+  left: 55%;
   }
   
 .resizeimage_d  {
   position: absolute;/*絶対配置*/
   bottom: 1%;
-  left: 0vw;
+  left: 5%;
   }
   
 .resizeimage_e  {
@@ -50,8 +51,8 @@
 .num
 {
   position: absolute;/*絶対配置*/
-  top: 40%;
-  left: 80%;
+  top: -5%;
+  left: 110%;
   font-family:arial, sans-serif;
   font-size:20px;
   font-weight: bold;
@@ -336,7 +337,7 @@ filter: brightness(1.8);
   
   document.getElementById("return").onclick = function()
 {
-location.href='./index_page2_bunsyo.html'
+location.href='./index_page2.html'
     
 };
 document.getElementById("next").onclick = function()

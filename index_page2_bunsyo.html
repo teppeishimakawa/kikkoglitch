@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
 <style>
 .resizeimage img { width: 100%; }
-.resizeimage_a img { width: 50%; }
+.resizeimage_a img { width:150px; }
 
 .resizeimage{/*親div*/
   position: relative;/*相対配置*/
@@ -13,8 +13,8 @@
 
 .resizeimage_a  {
   position: absolute;/*絶対配置*/
-  bottom: 3%;
-  left: -8%;
+  bottom: 4%;
+  left: -3%;
   }
   
   
@@ -45,7 +45,13 @@ filter: brightness(1.5);
 <script>
 document.getElementById("return").onclick = function()
 {
-location.href='./index.html'
+if(localStorage.getItem("table") == "1")
+ {
+ location.href='./index.html?t=t1'
+ }else if(localStorage.getItem("table") == "2")
+ {
+ location.href='./index.html?t=t2'
+ }
 };
 </script>
 

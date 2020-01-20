@@ -7,11 +7,11 @@
 
 .resizeimage img { width: 100%; }
 /*pixel指定しないと横いっぱいに広がってしまう*/
-.resizeimage_a img {width: 100px;
+.resizeimage_a img {width: 130px;
  /*object-fit: cover; */}
 
-.resizeimage_c img { width: 200px; }
-.resizeimage_d img { width: 200px; }
+.resizeimage_c img { width: 150px; }
+.resizeimage_d img { width: 150px; }
 .resizeimage_e img { width: 70%; }
 .resizeimage_f img { width: 70%; }
 
@@ -22,15 +22,15 @@
 /*check*/
 .resizeimage_a  {
   position: absolute;/*絶対配置*/
-  top: 84%;
-  left: 0vw;
+  top: 85%;
+  left: 32%;
   }
   
 /*kingaku*/
 .resizeimage_b  {
   position: absolute;/*絶対配置*/
-  top: 76%;
-  left: 10%;
+  top: 76.5%;
+  left: 30%;
   }
   
 /*kazu1*/
@@ -51,14 +51,13 @@
 .resizeimage_c  {
   position: absolute;/*絶対配置*/
   bottom: 1%;
-  left: 50vw;
+  left: 55%;
   }
-  
 /*return*/
 .resizeimage_d  {
   position: absolute;/*絶対配置*/
   bottom: 1%;
-  left: 0vw;
+  left: 5%;
   }
   
 /*item1*/
@@ -165,14 +164,14 @@ var term13=0;
 
 if(localStorage.getItem("table") == "1")
  {
- document.getElementById("sum").innerHTML="合計金額：" + (term2*400+term3*880) + "円";
- document.getElementById("syoyu").innerHTML="合計金額：" + term2 + "円";
- document.getElementById("moromi").innerHTML="合計金額：" + term3 + "円";
+ document.getElementById("sum").innerHTML="合計金額：" + (term2*400+term3*880).toLocaleString() + "円";
+ document.getElementById("syoyu").innerHTML="：" + term2 + "個";
+ document.getElementById("moromi").innerHTML="：" + term3 + "個";
  }else if(localStorage.getItem("table") == "2")
  {
- document.getElementById("sum").innerHTML="合計金額：" + (term12*400+term13*880) + "円";
- document.getElementById("syoyu").innerHTML="合計金額：" + term12 + "円";
- document.getElementById("moromi").innerHTML="合計金額：" + term13 + "円";
+ document.getElementById("sum").innerHTML="合計金額：" + (term12*400+term13*880).toLocaleString() + "円";
+ document.getElementById("syoyu").innerHTML="：" + term12 + " 個";
+ document.getElementById("moromi").innerHTML="：" + term13 + "個";
  };
   
   
@@ -188,6 +187,12 @@ location.href='./index.html'
 };
   
 document.getElementById("check").name="t" + localStorage.getItem("table") + "_check";
+
+document.getElementById("check").addEventListener('click', function() {
+  
+    alert("ご購入、誠にありがとうございました");
+  
+}, false);
 
 </script>
 
