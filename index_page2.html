@@ -4,19 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
 <style>
+/*食材紹介ページのフレームページ*/
 .resizeimage img { width: 100%; }
 
-.parent {/*親div*/
-  position: relative;/*相対配置*/
-  }
-
-.child {
-  position: absolute;/*絶対配置*/
-  color: white;/*文字は白に*/
-  top: 0px;
-  left:0px;
-
-  }
 
 html, body {
  height:100%; /*iframeを全面表示するために絶対必要！！*/
@@ -42,7 +32,7 @@ filter: brightness(1.5);
 }
 </style>
 
- <title>kikko2</title>
+ <title>klk</title>
 </head>
 
 <body>
@@ -65,11 +55,9 @@ socket.emit("client_to_server", "poling");
 socket.on("server_to_client", function(data)
   {
     console.log("rxdata:" + data)
-  //data:トリガ信号,flgg:再生ステータス1がstp
     if(data == "1" && flgg1 ==0)
     {
     location.href="./index3.html"
-    //document.getElementById("ifm1").src="./index3.html"
     flgg1=1;
     socket.disconnect();
     //socket.close();

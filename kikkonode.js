@@ -74,9 +74,9 @@ var server=http.createServer(function(req, res) {
 
   
         //html
-      if("/index_top.html" == url)
+      if("/index_top.html?t=t1" == url)
       {
-          fs.readFile("./index_top.html", "UTF-8", function (err, data)
+          fs.readFile("./index_top.html?t=t1", "UTF-8", function (err, data)
          {
       res.writeHead(200, {"Content-Type": "text/html"});
       res.write(data);
@@ -90,12 +90,25 @@ var server=http.createServer(function(req, res) {
           res.end(data);
          }); 
       }
+  
+  
+  
+          //html
+      if("/index_top.html?t=t2" == url)
+      {
+          fs.readFile("./index_top.html?t=t2", "UTF-8", function (err, data)
+         {
+      res.writeHead(200, {"Content-Type": "text/html"});
+      res.write(data);
+      res.end();
+         });
+      }
 
 
       //html
-      if("/index.html?t=t1" == url)
+      if("/index.html" == url)
       {
-          fs.readFile("./index.html?t=t1", "UTF-8", function (err, data)
+          fs.readFile("./index.html", "UTF-8", function (err, data)
          {
       res.writeHead(200, {"Content-Type": "text/html"});
       res.write(data);
@@ -117,31 +130,6 @@ var server=http.createServer(function(req, res) {
          }); 
       }
 
-
-        //html
-      if("/index.html?t=t2" == url)
-      {
-          fs.readFile("./index.html?t=t2", "UTF-8", function (err, data)
-         {
-      res.writeHead(200, {"Content-Type": "text/html"});
-      res.write(data);
-      res.end();
-         });
-      }/*else if("/img/KLK_01.png" == url)
-      { 
-          fs.readFile("./img/KLK_01.png", function (err, data)
-         {
-          res.writeHead(200, {"Content-Type": "image/png"});
-          res.end(data);
-         }); 
-      }else if("/img/next.png" == url)
-      { 
-          fs.readFile("./img/next.png", function (err, data)
-         {
-          res.writeHead(200, {"Content-Type": "image/png"});
-          res.end(data);
-         }); 
-      } */
 
   
     //clientからのデータ受信

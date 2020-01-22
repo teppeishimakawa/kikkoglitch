@@ -4,19 +4,18 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
 <style>
-/*シェフ紹介ページ*/
+
 .resizeimage img { width: 100%; }
-.resizeimage_a img { width: 150px; }
+.resizeimage_a img { width: 100%; }
 
 .resizeimage{/*親div*/
   position: relative;/*相対配置*/
   }
 
-/*next*/
-.resizeimage_a {
+.resizeimage_a  {
   position: absolute;/*絶対配置*/
-  bottom: 1%;
-  left: 55%;
+  bottom: 0.5%;
+  left: 50vw;
   }
   
   .bt{
@@ -51,7 +50,7 @@ filter: brightness(1.5);
   
 </style>
 
- <title>klk</title>
+ <title>kikko</title>
 </head>
 
 <body>
@@ -67,35 +66,11 @@ filter: brightness(1.5);
   
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
 <script>
-
 document.getElementById("btn").onclick = function()
 {
 location.href='./index_page2.html'
 };
-
-var flgg1=0;
-
-var socket = io.connect();
-setInterval(function()
-{
-socket.emit("client_to_server", "poling");
-socket.on("server_to_client", function(data)
-  {
-    console.log("rxdata:" + data)
-  //data:サーバからのトリガ信号,flgg:stt:1,stp:0
-    if(data == "1" && flgg1 ==0)
-    {
-    location.href="./index3.html"
-    flgg1=1;
-    //disconnectだとreloadすればsocket再開される
-    socket.disconnect();
-    //socket.close();
-    }
-  });
-
-},10000);
 </script>
 </body>
 </html>
